@@ -130,6 +130,8 @@
         </div>
     </section>
     <!-- End Hero Area -->
+    <script id="widget-wfp-script" language="javascript" type="text/javascript" src="https://secure.wayforpay.com/server/pay-widget.js"></script>
+
 
     <!-- Start Features Area -->
     <section id="features" class="features section">
@@ -263,31 +265,74 @@
                     </div>
                 </div>
             </div>
+
+
+
+<script id="widget-wfp-script" language="javascript" type="text/javascript" src="https://secure.wayforpay.com/server/pay-widget.js"></script>
+
+<script type="text/javascript">     
+var wayforpay = new Wayforpay();    
+var pay = function () {         
+wayforpay.run({                 
+merchantAccount : "test_merch_n1",              
+merchantDomainName : "www.market.ua",               
+authorizationType : "SimpleSignature",
+merchantTransactionSecureType: "AUTO",          
+merchantSignature : "3528e88304435817cb7ea6a212e096da",
+defaultPaymentSystem: "card",                 
+orderReference : "DH1706303192",                
+orderDate : "1415379863",               
+amount : "1547.36",                 
+currency : "UAH",               
+productName : "Процессор Intel Core i5-4670 3.4GHz",                
+productPrice : "1000",              
+productCount : "1",                 
+clientFirstName : "Вася",               
+clientLastName : "Васечкин",                
+clientEmail : "some@mail.com",              
+clientPhone: "380631234567",                
+language: "UA"          
+},          
+function (response) {
+// on approved                          
+},          
+function (response) {
+// on declined          
+},          
+function (response) {
+// on pending or in processing          
+}       
+);  
+}
+</script>
+
+
+
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12">
                     <!-- Single Table -->
                     <div class="single-table wow fadeInUp" data-wow-delay=".2s">
                         <!-- Table Head -->
                         <div class="table-head">
-                            <h4 class="title">Hobby</h4>
-                            <p>All the basics for starting a new business</p>
+                            <h4 class="title">Віш ліст</h4>
+                            <p>Все що тобі необхідно для успішного ремонту</p>
                             <div class="price">
-                                <h2 class="amount">$12<span class="duration">/mo</span></h2>
+                                <h2 class="amount">$120<span class="duration">/mo</span></h2>
                             </div>
                             <div class="button">
-                                <a href="javascript:void(0)" class="btn">Buy Hobby</a>
+                                <button type="button" onclick="pay();"class="btn">Купити віш ліст</button>
                             </div>
                         </div>
                         <!-- End Table Head -->
                         <!-- Start Table Content -->
                         <div class="table-content">
-                            <h4 class="middle-title">What's Included</h4>
+                            <h4 class="middle-title">Що в середині</h4>
                             <!-- Table List -->
                             <ul class="table-list">
-                                <li><i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
-                                <li><i class="lni lni-checkmark-circle"></i> Potenti felis, in cras ligula.</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Кольрові ілюстрації.</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Рельні приклади.</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Поради новачкам.</li>
+                                <li><i class="lni lni-checkmark-circle"></i> Правила підбору кольорів.</li>
                             </ul>
                             <!-- End Table List -->
                         </div>
@@ -412,7 +457,30 @@
         </div>
     </section>
     <!-- End Call To Action Area -->
-
+<form method="post" action="https://secure.wayforpay.com/pay" accept-charset="utf-8">
+  <input name="merchantAccount" value="test_merch_n1">
+  <input name="merchantAuthType" value="SimpleSignature">
+  <input name="merchantDomainName" value="www.market.ua">
+  <input name="orderReference" value="DH1706303192">
+  <input name="orderDate" value="1415379863">
+  <input name="amount" value="1547.36">
+  <input name="currency" value="UAH">
+  <input name="orderTimeout" value="49000">
+  <input name="productName[]" value="Процессор Intel Core i5-4670 3.4GHz">
+  <input name="productName[]" value="Память Kingston DDR3-1600 4096MB PC3-12800">
+  <input name="productPrice[]" value="1000">
+  <input name="productPrice[]" value="547.36">
+  <input name="productCount[]" value="1">
+  <input name="productCount[]" value="1">
+  <input name="clientFirstName" value="Вася">
+  <input name="clientLastName" value="Пупкин">
+  <input name="clientAddress" value="пр. Гагарина, 12">
+  <input name="clientCity" value="Днепропетровск">
+  <input name="clientEmail" value="some@mail.com">
+  <input name="defaultPaymentSystem" value="card">
+  <input name="merchantSignature" value="3528e88304435817cb7ea6a212e096da">
+  <input type="submit" value="Test">
+</form>
     <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
